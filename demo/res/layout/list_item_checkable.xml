@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mobeta.android.demodslv.CheckableLinearLayout
+<com.mobeta.android.demodslv.tool.CheckableLinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="fill_parent"
   android:layout_height="@dimen/item_height"
@@ -25,4 +25,4 @@
     android:layout_width="@dimen/item_height"
     android:layout_height="@dimen/item_height"
     android:layout_weight="0" />
-</com.mobeta.android.demodslv.CheckableLinearLayout>
+</com.mobeta.android.demodslv.tool.CheckableLinearLayout>

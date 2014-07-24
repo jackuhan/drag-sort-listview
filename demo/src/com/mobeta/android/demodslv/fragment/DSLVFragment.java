@@ -1,4 +1,4 @@
-package com.mobeta.android.demodslv;
+package com.mobeta.android.demodslv.fragment;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.mobeta.android.demodslv.R;
 import com.mobeta.android.dslv.DragSortListView;
 import com.mobeta.android.dslv.DragSortController;
 

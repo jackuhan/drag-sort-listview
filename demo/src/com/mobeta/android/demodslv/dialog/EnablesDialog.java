@@ -1,5 +1,6 @@
-package com.mobeta.android.demodslv;
+package com.mobeta.android.demodslv.dialog;
 
+import com.mobeta.android.demodslv.R;
 import com.mobeta.android.dslv.DragSortListView;
 import com.mobeta.android.dslv.DragSortController;
 

@@ -1,4 +1,4 @@
-package com.mobeta.android.demodslv;
+package com.mobeta.android.demodslv.fragment;
 
 import android.view.View;
 import android.widget.AdapterView;

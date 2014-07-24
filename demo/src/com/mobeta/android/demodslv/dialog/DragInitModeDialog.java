@@ -1,5 +1,6 @@
-package com.mobeta.android.demodslv;
+package com.mobeta.android.demodslv.dialog;
 
+import com.mobeta.android.demodslv.R;
 import com.mobeta.android.dslv.DragSortController;
 
 import android.support.v4.app.DialogFragment;
@@ -11,29 +12,31 @@ import android.os.Bundle;
 import com.mobeta.android.dslv.DragSortController;
 
 /**
- * Simply passes remove mode back to OnOkListener
+ * Sets drag init mode on DSLV controller passed into ctor.
  */
-public class RemoveModeDialog extends DialogFragment {
+public class DragInitModeDialog extends DialogFragment {
 
-    private int mRemoveMode;
+    private DragSortController mControl;
 
-    private RemoveOkListener mListener;
+    private int mDragInitMode;
 
-    public RemoveModeDialog() {
+    private DragOkListener mListener;
+
+    public DragInitModeDialog() {
         super();
-        mRemoveMode = DragSortController.FLING_REMOVE;
+        mDragInitMode = DragSortController.ON_DOWN;
     }
 
-    public RemoveModeDialog(int inRemoveMode) {
+    public DragInitModeDialog(int dragStartMode) {
         super();
-        mRemoveMode = inRemoveMode;
+        mDragInitMode = dragStartMode;
     }
 
-    public interface RemoveOkListener {
-        public void onRemoveOkClick(int removeMode);
+    public interface DragOkListener {
+        public void onDragOkClick(int removeMode);
     }
 
-    public void setRemoveOkListener(RemoveOkListener l) {
+    public void setDragOkListener(DragOkListener l) {
         mListener = l;
     }
 
@@ -42,11 +45,11 @@ public class RemoveModeDialog extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         // Set the dialog title
         builder.setTitle(R.string.select_remove_mode)
-                .setSingleChoiceItems(R.array.remove_mode_labels, mRemoveMode,
+                .setSingleChoiceItems(R.array.drag_init_mode_labels, mDragInitMode,
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                mRemoveMode = which;
+                                mDragInitMode = which;
                             }
                         })
                 // Set the action buttons
@@ -54,7 +57,7 @@ public class RemoveModeDialog extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         if (mListener != null) {
-                            mListener.onRemoveOkClick(mRemoveMode);
+                            mListener.onDragOkClick(mDragInitMode);
                         }
                     }
                 })

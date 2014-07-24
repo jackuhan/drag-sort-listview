@@ -1,4 +1,4 @@
-package com.mobeta.android.demodslv;
+package com.mobeta.android.demodslv.tool;
 
 import android.content.Context;
 import android.util.AttributeSet;
